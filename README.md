@@ -2,12 +2,23 @@
 
 Modern one-page website for **Noventra Group**: trucking operations, insurance guidance, finance solutions, and AI-powered products.
 
-## What's in this repo
+## Project structure
 
-| File | Purpose |
+| Path | Purpose |
 |---|---|
 | `index.html` | **The live site.** Fully compiled and self-contained (React bundled inside). Deploy this anywhere. |
-| `src/NoventraGroupWebsite.jsx` | The editable React source component. Make changes here, then rebuild. |
+| `src/NoventraGroupWebsite.jsx` | The editable React source component. All content lives in the `DATA` object near the top. |
+| `src/main.jsx` | Entry point — mounts the component into the page. |
+| `scripts/build.mjs` | Build script — bundles the source and inlines it into `index.html`. |
+| `scripts/template.html` | HTML shell (meta tags, Tailwind CDN) used by the build. |
+
+## Editing & building
+
+```bash
+npm install     # once
+# edit src/NoventraGroupWebsite.jsx
+npm run build   # regenerates index.html
+```
 
 ## Features
 
@@ -25,7 +36,3 @@ Modern one-page website for **Noventra Group**: trucking operations, insurance g
 3. Site goes live at `https://novawebhub.github.io/NoventraWebSite/`
 
 **Netlify / Vercel:** connect this repo, or drag `index.html` into https://app.netlify.com/drop
-
-## Editing
-
-Edit `src/NoventraGroupWebsite.jsx` (all content lives in the `DATA` object near the top), then rebuild `index.html` with esbuild, or ask Claude to rebuild it for you.
