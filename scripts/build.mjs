@@ -1,6 +1,6 @@
 // Bundles src/main.jsx (React included) and inlines it into a self-contained index.html.
 import esbuild from "esbuild";
-import { readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -20,5 +20,9 @@ const js = result.outputFiles[0].text;
 const template = readFileSync(join(root, "scripts/template.html"), "utf8");
 const html = template.replace("<!--APP_BUNDLE-->", `<script>\n${js}</script>`);
 
+// Root copy: committed, used by GitHub Pages / opening the file directly.
 writeFileSync(join(root, "index.html"), html);
-console.log(`index.html built (${(html.length / 1024).toFixed(1)} KB)`);
+// public/ copy: deploy output for Vercel (see vercel.json), not committed.
+mkdirSync(join(root, "public"), { recursive: true });
+writeFileSync(join(root, "public/index.html"), html);
+console.log(`index.html + public/index.html built (${(html.length / 1024).toFixed(1)} KB)`);
