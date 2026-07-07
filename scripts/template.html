@@ -9,7 +9,19 @@
   <meta property="og:description" content="Modern solutions for safer, smarter trucking operations." />
   <meta property="og:type" content="website" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { background-color: #070A13; margin: 0; }</style>
+  <!-- Apply the saved theme before first paint so light-theme users don't see a dark flash -->
+  <script>
+    try {
+      var t = localStorage.getItem("nv-theme");
+      if (t === "light" || (!t && matchMedia("(prefers-color-scheme: light)").matches)) {
+        document.documentElement.classList.add("nv-light");
+      }
+    } catch (e) {}
+  </script>
+  <style>
+    body { background-color: #070A13; margin: 0; }
+    html.nv-light body { background-color: #f2f6fb; }
+  </style>
 </head>
 <body>
   <div id="root"></div>

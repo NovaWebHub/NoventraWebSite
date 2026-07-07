@@ -528,7 +528,96 @@ function AnimationStyles() {
         .nv-reveal .nv-line-fill { opacity: 1; }
         .nv-reveal .nv-bar { transform: scaleY(1); }
       }
+
+      /* ---------- Light theme ----------
+         Activated by the sun/moon toggle in the header, which puts .nv-light
+         on <html>. The markup keeps its dark-palette utility classes; the
+         rules below remap them, so both themes live in one set of markup. */
+      html.nv-light body { background-color: #f2f6fb; }
+
+      html.nv-light .bg-\\[\\#070A13\\] { background-color: #f2f6fb; }
+      html.nv-light .bg-\\[\\#070A13\\]\\/70 { background-color: rgba(242,246,251,.8); }
+      html.nv-light .bg-\\[\\#070A13\\]\\/65 { background-color: rgba(255,255,255,.78); }
+      html.nv-light .bg-\\[\\#070A13\\]\\/60 { background-color: rgba(255,255,255,.75); }
+      html.nv-light .bg-\\[\\#0B1023\\] { background-color: #e9eef7; }
+
+      html.nv-light .bg-white\\/5 { background-color: rgba(11,16,35,.045); }
+      html.nv-light .bg-white\\/10 { background-color: rgba(11,16,35,.08); }
+      html.nv-light .hover\\:bg-white\\/10:hover { background-color: rgba(11,16,35,.09); }
+      html.nv-light .hover\\:bg-white\\/\\[0\\.07\\]:hover { background-color: rgba(11,16,35,.07); }
+      html.nv-light .disabled\\:hover\\:bg-white\\/5:hover:disabled,
+      html.nv-light .disabled\\:hover\\:bg-white\\/5:disabled:hover { background-color: rgba(11,16,35,.045); }
+
+      html.nv-light .text-white { color: #0b1023; }
+      html.nv-light .text-white\\/90 { color: rgba(11,16,35,.92); }
+      html.nv-light .text-white\\/85 { color: rgba(11,16,35,.88); }
+      html.nv-light .text-white\\/80 { color: rgba(11,16,35,.84); }
+      html.nv-light .text-white\\/70 { color: rgba(11,16,35,.74); }
+      html.nv-light .text-white\\/60 { color: rgba(11,16,35,.64); }
+      html.nv-light .text-white\\/50 { color: rgba(11,16,35,.55); }
+      html.nv-light .text-white\\/40 { color: rgba(11,16,35,.45); }
+      html.nv-light .text-white\\/20 { color: rgba(11,16,35,.25); }
+      html.nv-light .hover\\:text-white:hover { color: #0b1023; }
+      html.nv-light .placeholder\\:text-white\\/40::placeholder { color: rgba(11,16,35,.45); }
+
+      html.nv-light .text-cyan-300, html.nv-light .text-cyan-200 { color: #0e7490; }
+      html.nv-light .text-cyan-300\\/90 { color: rgba(14,116,144,.92); }
+      html.nv-light .hover\\:text-cyan-300:hover { color: #0e7490; }
+
+      html.nv-light .border-white\\/10 { border-color: rgba(11,16,35,.12); }
+      html.nv-light .border-white\\/20,
+      html.nv-light .hover\\:border-white\\/20:hover { border-color: rgba(11,16,35,.22); }
+      html.nv-light .ring-white\\/10 { --tw-ring-color: rgba(11,16,35,.12); }
+
+      html.nv-light .border-cyan-300 { border-color: #0891b2; }
+      html.nv-light .border-cyan-300\\/50,
+      html.nv-light .focus\\:border-cyan-300\\/50:focus { border-color: rgba(8,145,178,.55); }
+      html.nv-light .border-cyan-300\\/40,
+      html.nv-light .hover\\:border-cyan-300\\/40:hover { border-color: rgba(8,145,178,.45); }
+      html.nv-light .ring-cyan-300\\/20 { --tw-ring-color: rgba(8,145,178,.25); }
+      html.nv-light .ring-cyan-300\\/30,
+      html.nv-light .focus\\:ring-cyan-300\\/30:focus { --tw-ring-color: rgba(8,145,178,.35); }
+      html.nv-light .ring-cyan-300\\/60,
+      html.nv-light .focus-visible\\:ring-cyan-300\\/60:focus-visible { --tw-ring-color: rgba(8,145,178,.6); }
+      html.nv-light .focus-visible\\:ring-offset-\\[\\#070A13\\]:focus-visible { --tw-ring-offset-color: #f2f6fb; }
+
+      html.nv-light .from-\\[\\#070A13\\]\\/70 { --tw-gradient-from: rgba(242,246,251,.85); }
+      html.nv-light .from-\\[\\#070A13\\]\\/80 { --tw-gradient-from: rgba(242,246,251,.9); }
+      html.nv-light .via-\\[\\#070A13\\]\\/20 { --tw-gradient-stops: var(--tw-gradient-from), rgba(242,246,251,.25), var(--tw-gradient-to); }
+      html.nv-light .to-\\[\\#0B1023\\] { --tw-gradient-to: #e9eef7; }
+
+      /* The navy logo no longer needs the white inversion on a light page */
+      html.nv-light .brightness-0.invert { filter: none; }
+
+      /* Charts: darker cyan + dark gridlines for contrast on light cards */
+      html.nv-light .nv-line { stroke: #0891b2; }
+      html.nv-light .nv-bar { fill: rgba(8,145,178,.55); stroke: rgba(8,145,178,.85); }
+      html.nv-light [stroke="rgba(255,255,255,0.10)"] { stroke: rgba(11,16,35,.12); }
+      html.nv-light [stroke="rgb(103,232,249)"] { stroke: #0891b2; }
+      html.nv-light [fill="rgb(103,232,249)"] { fill: #0891b2; }
+
+      /* Decorative pieces tuned down for the light background */
+      html.nv-light .nv-blob-a, html.nv-light .nv-blob-b, html.nv-light .nv-blob-c { opacity: .55; }
+      html.nv-light .nv-road { background-image: linear-gradient(90deg, rgba(8,145,178,.4) 0 56px, transparent 56px 160px); }
+      html.nv-light .nv-shine::after { background: linear-gradient(105deg, transparent, rgba(255,255,255,.7), transparent); }
     `}</style>
+  );
+}
+
+function SunIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+    </svg>
   );
 }
 
@@ -990,6 +1079,25 @@ function DemoScheduler() {
 }
 
 export default function NoventraGroupWebsiteModern() {
+  // Theme: dark (brand default) or light. First visit follows the visitor's
+  // system preference; the sun/moon toggle in the header overrides it and the
+  // choice is remembered in localStorage.
+  const [theme, setTheme] = React.useState(() => {
+    try {
+      const saved = window.localStorage.getItem("nv-theme");
+      if (saved === "light" || saved === "dark") return saved;
+      if (window.matchMedia("(prefers-color-scheme: light)").matches) return "light";
+    } catch (e) { /* private mode etc. — fall through to dark */ }
+    return "dark";
+  });
+  React.useEffect(() => {
+    document.documentElement.classList.toggle("nv-light", theme === "light");
+    document.body.style.backgroundColor = theme === "light" ? "#f2f6fb" : "#070A13";
+    try {
+      window.localStorage.setItem("nv-theme", theme);
+    } catch (e) { /* ignore */ }
+  }, [theme]);
+
   // ✅ FIX for the "everything is white" issue:
   // All styling on this page uses Tailwind CSS classes. If Tailwind is not
   // installed in the project, the page renders unstyled (a white page).
@@ -1008,13 +1116,8 @@ export default function NoventraGroupWebsiteModern() {
       script.src = "https://cdn.tailwindcss.com";
       document.head.appendChild(script);
     }
-
-    // Keep the page dark even before Tailwind finishes loading (no white flash)
-    const prevBg = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = "#070A13";
-    return () => {
-      document.body.style.backgroundColor = prevBg;
-    };
+    // (The body background is managed by the theme effect above, so the page
+    // keeps the right color even before Tailwind finishes loading.)
   }, []);
 
   // Smooth scrolling for the in-page anchor navigation
@@ -1073,7 +1176,11 @@ export default function NoventraGroupWebsiteModern() {
   return (
     <div
       className="min-h-screen bg-[#070A13] text-white antialiased"
-      style={{ minHeight: "100vh", backgroundColor: "#070A13", color: "#ffffff" }}
+      style={{
+        minHeight: "100vh",
+        backgroundColor: theme === "light" ? "#f2f6fb" : "#070A13",
+        color: theme === "light" ? "#0b1023" : "#ffffff",
+      }}
     >
       <AnimationStyles />
       {/* Header */}
@@ -1100,6 +1207,15 @@ export default function NoventraGroupWebsiteModern() {
               ))}
             </nav>
             <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                aria-label={theme === "light" ? "Switch to dark theme" : "Switch to light theme"}
+                title={theme === "light" ? "Switch to dark theme" : "Switch to light theme"}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/5 text-white ring-1 ring-white/10 transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60"
+              >
+                {theme === "light" ? <MoonIcon /> : <SunIcon />}
+              </button>
               <Button href={DATA.primaryCta.href}>{DATA.primaryCta.label}</Button>
             </div>
           </div>

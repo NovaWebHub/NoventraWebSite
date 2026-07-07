@@ -26,7 +26,8 @@ npm run build   # regenerates index.html
 - Interactive **Book a Demo** scheduler: calendar + time slots + downloadable `.ics` calendar invite
 - Contact form (opens visitor's email app pre-filled — no backend required)
 - Background animations (respects reduced-motion preferences)
-- Fully responsive, dark theme, cyan/navy brand palette
+- Light/dark theme toggle (sun/moon in the header) — follows the visitor's system preference on first visit and remembers their choice
+- Fully responsive, cyan/navy brand palette
 
 ## Deploy
 
